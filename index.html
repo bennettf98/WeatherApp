@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Weather</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forecast.css">
 </head>
-<!--WRITE README AND CREATE GITIGNORE-->
+<!-- WRITE README AND GITIGNORE-->
+ <!-- remove random red border next-->
 <body>
-<div class="gradient-background">
-<br>
-<h1>Awesome Weather</h1>
+    
+    <div class="search">
+        <br>
+        <h1>Awesome Weather</h1>
+        <input type="text" id="location" placeholder="Search city or state">
+        <button onclick="getWeather()">Enter</button>
+        <button onclick="resetApp()">Reset</button>
+    </div>
 
-<input type="text" id="location" placeholder="Search city or state">
-<button onclick="getWeather()">Enter</button>
-<button onclick="resetApp()">Reset</button>
+    <h1 style="text-align: left; margin-left: 10px; color: #ec3843">5-day Forecast</h1>
+    
+    <div class="forecast-container"></div>
+
+</div>
 
 <script src="script.js"></script>
-</div>
 </body>
 </html>
