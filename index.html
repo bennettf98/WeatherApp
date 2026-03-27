@@ -6,25 +6,21 @@
     <title>Awesome Weather</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/forecast.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <!-- WRITE README AND GITIGNORE-->
- <!-- remove random red border next-->
 <body>
-    
     <div class="search">
         <br>
-        <h1>Awesome Weather</h1>
-        <input type="text" id="location" placeholder="Search city or state">
+        <h1 style="font-family: 'League Spartan', sans-serif; font-size: 42px; text-align: center;">AWESOME WEATHER</h1>
+        <!-- 'League Spartan' font family is closest I could find to the font used in Awesome Inc's wordmark logo-->
+        <input type="text" id="searchbar" placeholder="Search any City, State, or Country"><br>
         <button onclick="getWeather()">Enter</button>
         <button onclick="resetApp()">Reset</button>
     </div>
-
-    <h1 style="text-align: left; margin-left: 10px; color: #ec3843">5-day Forecast</h1>
-    
-    <div class="forecast-container"></div>
-
-</div>
-
+    <h1 class="forecast-title forecast-hidden" style="font-family: 'League Spartan', sans-serif;">5-DAY FORECAST:</h1>
+    <div class="forecast-container forecast-hidden"></div>
 <script src="script.js"></script>
+<!--add footer saying who made project and link to github repo-->
 </body>
 </html>

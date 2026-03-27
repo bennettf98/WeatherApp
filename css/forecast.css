@@ -1,10 +1,87 @@
+.forecast-title {
+    margin-left: 10px;
+    color: #ec3843;
+}
+
+.forecast-hidden {
+    display: none;
+}
+
 .forecast-container {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: left;
     margin-left: 10px;
     width: 80%;
-    border: 3px solid black;
+    border: 2px solid #ec3843;
+    border-radius: 10px;
     padding: 10px;
     margin-top: 10px;
-    background-color: #f0f0f0;
+    background-color: lightblue;
+    min-height: 120px;
+}
+
+.forecast-header {
+    margin-bottom: 16px;
+}
+
+.forecast-header h2 {
+    margin: 0 0 4px;
+    color: #1b3a4b;
+}
+
+.forecast-header p {
+    margin: 0;
+    color: #555555;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.forecast-card {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ec3843;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: white;
+}
+
+.forecast-card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.forecast-card-text {
+    flex: 1;
+}
+
+.forecast-icon {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.forecast-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #0b5d7a;
+}
+
+.forecast-card p {
+    margin: 6px 0;
+}
+
+.forecast-summary {
+    font-weight: bold;
+}
+
+.forecast-message {
+    margin: 0;
+    color: #333333;
 }
