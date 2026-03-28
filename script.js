@@ -153,6 +153,38 @@ function getWeatherImage(weatherCode) {
     }
 }
 
+function getForecastCardTheme(weatherCode) {
+    switch (weatherCode) {
+        case 0:
+        case 1:
+            return 'forecast-sunny';
+        case 2:
+        case 3:
+            return 'forecast-cloudy';
+        case 45:
+        case 48:
+            return 'forecast-foggy';
+        case 51:
+        case 53:
+        case 55:
+        case 61:
+        case 63:
+        case 65:
+        case 80:
+        case 81:
+        case 82:
+            return 'forecast-rainy';
+        case 71:
+        case 73:
+        case 75:
+            return 'forecast-snowy';
+        case 95:
+            return 'forecast-stormy';
+        default:
+            return 'forecast-default';
+    }
+}
+
 function cleanText(text) {
     return text.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
 }
@@ -313,9 +345,10 @@ function renderForecast(locationName, locationDetails, dailyData) {
         const weatherCode = dailyData.weather_code[i];
         const weatherLabel = getWeatherLabel(weatherCode);
         const weatherImage = getWeatherImage(weatherCode);
+        const weatherTheme = getForecastCardTheme(weatherCode);
 
         forecastHtml += `
-            <article class="forecast-card">
+            <article class="forecast-card ${weatherTheme}">
                 <div class="forecast-card-content">
                     <div class="forecast-card-text">
                         <h3>${formatDate(date)}</h3>

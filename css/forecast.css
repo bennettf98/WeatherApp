@@ -12,11 +12,11 @@
     text-align: left;
     margin-left: 10px;
     width: 80%;
-    border: 2px solid #ec3843;
+    border: 2px solid #000000;
     border-radius: 10px;
     padding: 10px;
     margin-top: 10px;
-    background-color: lightblue;
+    background: linear-gradient(to bottom, rgb(114, 168, 185) 0%, rgb(114, 168, 185) 20%, rgb(185, 227, 241) 50%, rgb(114, 168, 185) 80%, rgb(114, 168, 185) 100%);
     min-height: 120px;
 }
 
@@ -26,12 +26,12 @@
 
 .forecast-header h2 {
     margin: 0 0 4px;
-    color: #1b3a4b;
+    color: #000000;
 }
 
 .forecast-header p {
     margin: 0;
-    color: #555555;
+    color: #1f1d1d;
 }
 
 .forecast-grid {
@@ -43,10 +43,12 @@
 .forecast-card {
     width: 100%;
     box-sizing: border-box;
-    border: 2px solid #ec3843;
+    border: 2px solid #000000;
     border-radius: 10px;
     padding: 12px;
     background-color: white;
+    background-clip: padding-box;
+    color: #163243;
 }
 
 .forecast-card-content {
@@ -70,7 +72,7 @@
 .forecast-card h3 {
     margin-top: 0;
     margin-bottom: 10px;
-    color: #0b5d7a;
+    color: inherit;
 }
 
 .forecast-card p {
@@ -83,5 +85,47 @@
 
 .forecast-message {
     margin: 0;
-    color: #333333;
+    color: #000000;
+}
+
+.forecast-sunny {
+    background: linear-gradient(to right, #f5c84d, lightblue 100%);
+    border: 2px solid rgb(68, 126, 161);
+    color: #000000;
+}
+
+.forecast-cloudy {
+    background: rgb(185, 185, 185);
+    border: 2px solid rgb(105, 100, 100);
+    color: #000000;
+}
+
+.forecast-foggy {
+    background: rgb(185, 185, 185);
+    border: 2px solid rgb(105, 100, 100);
+    color: #000000;
+}
+
+.forecast-rainy {
+    background: linear-gradient(to right,#587ea6, rgb(133, 129, 129));
+    border-color: #25486d;
+    color: #000000;
+}
+
+.forecast-snowy {
+    background: linear-gradient(to right, #9bcbe0, white);
+    border-color: #4a93b3;
+    color: #000000;
+}
+
+.forecast-stormy {
+    background: linear-gradient(to right, #cfcd50, rgb(133, 129, 129));
+    border-color: #9c9a00;
+    color: #000000;
+}
+
+.forecast-default {
+    background: white;
+    border-color: #ec3843;
+    color: #000000;
 }

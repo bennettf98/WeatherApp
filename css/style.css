@@ -8,9 +8,9 @@ body {
 }
 
 .search {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'league spartan', sans-serif;
     text-align: center;
-    color: #ec3843;
+    color:#ec3843;
 }
 
 #searchbar {
@@ -18,9 +18,9 @@ body {
     margin-bottom: 8px;
     width: 80%;
     height: 40px;
-    border: 2px solid #ec3843;
+    border: 2px solid #000000;
     border-radius: 8px;
-    background-color: lightblue;
+    background: linear-gradient(to bottom, rgb(114, 168, 185) 0%, rgb(114, 168, 185) 20%, rgb(185, 227, 241) 50%, rgb(114, 168, 185) 80%, rgb(114, 168, 185) 100%);
 }
 
 #searchbar::placeholder {
@@ -31,7 +31,7 @@ body {
     text-align: center;
     padding: 10px;
     width: 90px;
-    border: 2px solid #ec3843;
+    border: 2px solid #000000;
     border-radius: 8px;
-    background-color: lightblue;
+    background: linear-gradient(to bottom, rgb(114, 168, 185) 0%, rgb(114, 168, 185) 20%, rgb(185, 227, 241) 50%, rgb(114, 168, 185) 80%, rgb(114, 168, 185) 100%);
 }
