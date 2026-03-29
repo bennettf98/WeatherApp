@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awesome Weather</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Awesome Forecast</title>
+    <link rel="stylesheet" href="css/frontpage.css">
     <link rel="stylesheet" href="css/forecast.css">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <!-- WRITE README AND GITIGNORE-->
-<!-- change box border, either change color or remove entirely (leave edges curved)-->
- <!-- maybe more creative named based on 'awesome weather'-->
-<body>
+  <body>
+    <div class="brand-header">
+        <img class="brand-logo" src="images/titlelogo.png" alt="Awesome Forecast logo">
+        <h1 class="brand-title">AWESOME FORECAST</h1>
+    </div>
     <div class="search">
         <br>
-        <h1 style="font-family: 'League Spartan', sans-serif; font-size: 42px; text-align: center;">AWESOME WEATHER</h1>
-        <!-- 'League Spartan' font family is closest I could find to the font used in Awesome Inc's wordmark logo-->
         <input type="text" id="searchbar" placeholder="Search any City, State, or Country"><br>
         <button onclick="getWeather()">Enter</button>
         <button onclick="resetApp()">Reset</button>
     </div>
-    <h1 class="forecast-title forecast-hidden" style="font-family: 'League Spartan', sans-serif;">5-DAY FORECAST:</h1>
+    <h1 class="forecast-title forecast-hidden" style="font-family: 'Exo', sans-serif;">5-DAY FORECAST:</h1>
     <div class="forecast-container forecast-hidden"></div>
-<script src="script.js"></script>
+<script src="js/weather.js"></script>
+<script src="js/locations.js"></script>
+<script src="js/app.js"></script>
 <!--add footer saying who made project and link to github repo-->
 </body>
 </html>
