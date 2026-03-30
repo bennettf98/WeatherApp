@@ -9,24 +9,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- CSS sheets for background, searchbar/buttons, forecast cards, and links to fonts-->
 </head>
-<!-- WRITE README AND GITIGNORE-->
   <body>
     <div class="brand-header">
-        <img class="brand-logo" src="images/titlelogo.png" alt="Awesome Forecast logo">
-        <h1 class="brand-title">AWESOME FORECAST</h1>
+        <img class="brand-logo" src="images/titlelogo.png" alt="ForecastFive logo">
+        <h1 class="brand-title">ForecastFive</h1>
+        <!-- Website's main title header and logo-->
     </div>
     <div class="search">
         <br>
         <input type="text" id="searchbar" placeholder="Search any City, State, or Country"><br>
         <button onclick="getWeather()">Enter</button>
         <button onclick="resetApp()">Reset</button>
+        <!-- Search bar and Enter/Reset buttons-->
     </div>
     <h1 class="forecast-title forecast-hidden" style="font-family: 'Exo', sans-serif;">5-DAY FORECAST:</h1>
     <div class="forecast-container forecast-hidden"></div>
+    <!-- 5-day forecast header and forecast card container-->
+<footer class="footer">
+    <p>Project creator & repository: <br><a href="https://github.com/bennettf98" target="_blank">Bennett F.</a> | <a href="https://github.com/bennettf98/weatherapp" target="_blank">GitHub Repository</a></p>
+    <!-- Footer providing my GitHub profile and this project's repository-->
+</footer>
 <script src="js/weather.js"></script>
 <script src="js/locations.js"></script>
 <script src="js/app.js"></script>
-<!--add footer saying who made project and link to github repo-->
 </body>
 </html>

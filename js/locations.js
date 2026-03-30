@@ -72,7 +72,7 @@ function findStateRegion(searchText) {
         const regionCandidate = words.slice(words.length - length).join(' ');
         const cityCandidate = words.slice(0, words.length - length).join(' ');
 
-        if (stateAbbreviations[regionCandidate] || stateNames.indexOf(regionCandidate) !== -1) {
+        if (stateAbbreviations[regionCandidate] || stateNames.includes(regionCandidate)) {
             return {
                 cityName: cityCandidate,
                 regionName: regionCandidate
@@ -104,31 +104,22 @@ function splitLocationSearch(searchText) {
     };
 }
 
-function getRegionNames(regionText) {
+function regionMatches(place, regionText) {
     const rawRegion = cleanText(regionText);
     const fullStateName = stateAbbreviations[rawRegion] || '';
-
-    return {
-        rawRegion: rawRegion,
-        fullStateName: fullStateName
-    };
-}
-
-function regionMatches(place, regionText) {
-    const regionInfo = getRegionNames(regionText);
     const admin1 = cleanText(place.admin1 || '');
     const country = cleanText(place.country || '');
     const countryCode = cleanText(place.country_code || '');
 
-    if (!regionInfo.rawRegion) {
+    if (!rawRegion) {
         return true;
     }
 
-    if (admin1 === regionInfo.rawRegion || country === regionInfo.rawRegion || countryCode === regionInfo.rawRegion) {
+    if (admin1 === rawRegion || country === rawRegion || countryCode === rawRegion) {
         return true;
     }
 
-    if (regionInfo.fullStateName && admin1 === regionInfo.fullStateName) {
+    if (fullStateName && admin1 === fullStateName) {
         return true;
     }
 
@@ -149,6 +140,7 @@ function findBestPlace(results, searchText) {
         const admin1 = cleanText(place.admin1 || '');
         const admin2 = cleanText(place.admin2 || '');
         const country = cleanText(place.country || '');
+        const population = place.population || 0;
         let score = 0;
 
         if (regionSearch && !regionMatches(place, regionSearch)) {
@@ -167,11 +159,11 @@ function findBestPlace(results, searchText) {
             score += 3;
         }
 
-        if (name.indexOf(citySearch) !== -1 && !name.startsWith(citySearch)) {
+        if (name.includes(citySearch) && !name.startsWith(citySearch)) {
             score += 1;
         }
 
-        if (admin1.indexOf(citySearch) !== -1 || admin2.indexOf(citySearch) !== -1 || country.indexOf(citySearch) !== -1) {
+        if (admin1.includes(citySearch) || admin2.includes(citySearch) || country.includes(citySearch)) {
             score += 1;
         }
 
@@ -182,11 +174,11 @@ function findBestPlace(results, searchText) {
         if (score > bestScore) {
             bestPlace = place;
             bestScore = score;
-            bestPopulation = place.population || 0;
+            bestPopulation = population;
         } else if (score === bestScore && score > 0) {
-            if ((place.population || 0) > bestPopulation) {
+            if (population > bestPopulation) {
                 bestPlace = place;
-                bestPopulation = place.population || 0;
+                bestPopulation = population;
             }
         }
     }

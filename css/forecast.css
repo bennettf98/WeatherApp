@@ -1,6 +1,6 @@
 .forecast-title {
     margin-left: 10px;
-    color: #ec3843;
+    color: #0508d1;
     text-shadow: 0px 3px 2px #000000;
 }
 
@@ -89,7 +89,7 @@
 }
 
 .forecast-sunny {
-    background: linear-gradient(to right, #f5c84d, lightblue 100%);
+    background: linear-gradient(to right, #ec9a3c, lightblue 100%);
     border: 2px solid rgb(68, 126, 161);
     color: #000000;
 }
