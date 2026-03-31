@@ -1,4 +1,4 @@
-function formatDate(dateText) {
+function formatDate(dateText) { // Converts dates in number form from API into different format (ex.: 2026-03-31 -> Tue, Mar 31) //
     const date = new Date(`${dateText}T12:00:00`);
 
     return date.toLocaleDateString('en-US', {
@@ -8,7 +8,7 @@ function formatDate(dateText) {
     });
 }
 
-function getWeatherLabel(weatherCode) {
+function getWeatherLabel(weatherCode) { // Receives API's weather codes and broadly groups them into correlated forecasts //
     switch (weatherCode) {
         case 0:
             return 'Clear sky';
@@ -52,7 +52,7 @@ function getWeatherLabel(weatherCode) {
     }
 }
 
-function getWeatherImage(weatherCode) {
+function getWeatherImage(weatherCode) { // Takes groups of weather codes based on forecast and returns an image reflective of the weather to each forecast card //
     switch (weatherCode) {
         case 0:
         case 1:
@@ -83,7 +83,7 @@ function getWeatherImage(weatherCode) {
     }
 }
 
-function getForecastCardTheme(weatherCode) {
+function getForecastCardTheme(weatherCode) { // Groups weather codes into groups more specific than getWeatherImage, then returns them a background theme for the card based on the forecast //
     switch (weatherCode) {
         case 0:
         case 1:

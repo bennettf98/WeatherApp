@@ -1,4 +1,4 @@
-body {
+body { /* Insertion and formatting of sky background image */
     background-image: url("../images/weather-background.jpg");
     background-size: cover;
     background-position: center;
@@ -6,9 +6,8 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
 }
-/* Sky background image */
 
-.brand-header {
+.brand-header { /* Visuals and formatting of div section containing logo and title */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +16,7 @@ body {
     margin-bottom: 8px;
 }
 
-.brand-logo {
+.brand-logo { /* Placement and formatting of triangle logo */
     width: 280px;
     max-width: 60vw;
     height: auto;
@@ -27,7 +26,7 @@ body {
     margin-bottom: -25px;
 }
 
-.brand-title {
+.brand-title { /* Formatting and text color/shadow of ForecastFive title text */
     margin: 0;
     font-family: 'Exo', sans-serif;
     font-size: 42px;
@@ -36,13 +35,13 @@ body {
     text-shadow: 0px 3px 2px #000000;
 }
 
-.search {
+.search { /* Formatting and text color/font of div section containing searchbar and Enter/Reset buttons */
     font-family: 'Exo', sans-serif;
     text-align: center;
     color:#0508d1;
 }
 
-#searchbar {
+#searchbar { /* Searchbar formatting, visuals, and background gradient */
     text-align: center;
     margin-bottom: 8px;
     width: 80%;
@@ -53,11 +52,11 @@ body {
     box-shadow: none;
 }
 
-#searchbar::placeholder {
+#searchbar::placeholder { /* Font color of 'Search any City, State, or Country' placeholder text in searchbar */
     color: black;
 }
 
-.search button {
+.search button { /* Visuals, formatting, and background gradient of Enter/Reset buttons under the search div */
     text-align: center;
     padding: 10px;
     width: 90px;
@@ -66,7 +65,7 @@ body {
     background: linear-gradient(to bottom, rgb(114, 168, 185) 0%, rgb(114, 168, 185) 20%, rgb(185, 227, 241) 50%, rgb(114, 168, 185) 80%, rgb(114, 168, 185) 100%);
 }
 
-.footer {
+.footer { /* Formatting and text color/font of footer */
     font-family: 'Exo', sans-serif;
     text-align: center;
     padding: 20px;

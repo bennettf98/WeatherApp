@@ -1,25 +1,23 @@
 const locationSearch = document.getElementById('searchbar');
 const forecastContainer = document.querySelector('.forecast-container');
 const forecastTitle = document.querySelector('.forecast-title');
-// Reads searchbar input and HTML elements of 5-day forecast header and forecast card container //
+// Stores references to searchbar input, 5-day forecast header, and forecast card container //
 
-function showMessage(message) {
+function showMessage(message) { // Reveals 5-day forecast header and forecast container and displays message subsequent to user input in searchbar //
     forecastTitle.classList.remove('forecast-hidden');
     forecastContainer.classList.remove('forecast-hidden');
     forecastContainer.innerHTML = `<p class="forecast-message">${message}</p>`;
 }
-// Reveals 5-day forecast header and forecast container and displays message subsequent to user input in searchbar //
 
-function resetApp() {
+function resetApp() { // Provides function to reset button, hides 5-day forecast header and forecast container to reset page to default //
     locationSearch.value = '';
     forecastContainer.innerHTML = '';
     forecastTitle.classList.add('forecast-hidden');
     forecastContainer.classList.add('forecast-hidden');
     locationSearch.focus();
 }
-// Provides function to reset button, removes 5-day forecast header and forecast container to reset page to default //
 
-function getLocationDetails(place) {
+function getLocationDetails(place) { // Displays location information based on user search and Open-Meteo information //
     if (place.admin1 && place.country) {
         return `${place.admin1}, ${place.country}`;
     }
@@ -34,9 +32,8 @@ function getLocationDetails(place) {
 
     return 'Location found';
 }
-// Retrieves location information based on user search and Open-Meteo information //
 
-function renderForecast(locationName, locationDetails, dailyData) {
+function renderForecast(locationName, locationDetails, dailyData) { // Receives the forecast information of searched location and places subsequent HTML elements into cards inside container //
     const dates = dailyData.time;
     const highTemps = dailyData.temperature_2m_max;
     const lowTemps = dailyData.temperature_2m_min;
@@ -49,9 +46,8 @@ function renderForecast(locationName, locationDetails, dailyData) {
         </div>
         <div class="forecast-grid">
     `;
-// Retrieves the forecast information of searched location and places subsequent HTML elements into cards inside container //
 
-    for (let i = 0; i < dates.length; i += 1) {
+    for (let i = 0; i < dates.length; i += 1) { // Converts Open-Meteo weather data into readable information and retrieves weather type labels, images, and backgrounds for forecast cards based on that day's weather //
         const date = dates[i];
         const high = Math.round(highTemps[i]);
         const low = Math.round(lowTemps[i]);
@@ -60,7 +56,6 @@ function renderForecast(locationName, locationDetails, dailyData) {
         const weatherLabel = getWeatherLabel(weatherCode);
         const weatherImage = getWeatherImage(weatherCode);
         const weatherTheme = getForecastCardTheme(weatherCode);
-// Converts Open-Meteo weather data into readable information and retrieves weather type labels, images, and backgrounds for forecast cardsbased on that day's weather //
 
         forecastHtml += `
             <article class="forecast-card ${weatherTheme}">
@@ -78,11 +73,10 @@ function renderForecast(locationName, locationDetails, dailyData) {
         `;
     }
     forecastHtml += '</div>';
-    forecastContainer.innerHTML = forecastHtml;
+    forecastContainer.innerHTML = forecastHtml; // Places HTML elements into forecast container to showcase information inside forecast cards such as dates, precipitation, temperatures, and subsequent images and backgrounds dependent on weather //
 }
-// HTML elements to showcase information inside forecast cards such as dates, precipitation, temperatures, and subsequent images and backgrounds dependent on weather //
 
-async function getWeather() {
+async function getWeather() { //  Retrieves geolocation and weather forecast information based on user input into searchbar //
     const city = locationSearch.value.trim();
 
     if (!city) {
@@ -142,13 +136,11 @@ async function getWeather() {
         console.error(error);
     }
 }
-// Returned responses inside forecast container if location search provides no results for different reasons //
 
-locationSearch.addEventListener('keydown', function (event) {
+locationSearch.addEventListener('keydown', function (event) { // Retrieves weather based on searchbar input when Enter button is pressed //
     if (event.key !== 'Enter') {
         return;
-    }
+    }   
 
     getWeather();
 });
-// Reveals forecast card even when pressing enter button with empty search, will prompt user to search a location //

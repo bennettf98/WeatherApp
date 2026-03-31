@@ -1,4 +1,4 @@
-const stateAbbreviations = {
+const stateAbbreviations = { // Allows state names to be read as their postal abbreviations to avoid requiring users to type full state name //
     al: 'alabama',
     ak: 'alaska',
     az: 'arizona',
@@ -51,11 +51,11 @@ const stateAbbreviations = {
     wy: 'wyoming'
 };
 
-function cleanText(text) {
+function cleanText(text) { // Cleans searchbar inputs by converting text to lowercase and removes periods and unnecessary spaces, resulting in flexibility in user input //
     return text.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
 }
 
-function findStateRegion(searchText) {
+function findStateRegion(searchText) { // Checks searchbar input for state names and postal abbreviations and separates them into cities and regions //
     const cleanedSearch = cleanText(searchText);
     const words = cleanedSearch.split(' ');
     const stateNames = Object.values(stateAbbreviations);
@@ -83,7 +83,7 @@ function findStateRegion(searchText) {
     return null;
 }
 
-function splitLocationSearch(searchText) {
+function splitLocationSearch(searchText) { // Handles searches both with and without commas to allow the site to use searchbar inputs whether a comma is present or not //
     const parts = searchText.split(',');
     const cityName = parts[0].trim();
     let regionName = '';
@@ -104,7 +104,7 @@ function splitLocationSearch(searchText) {
     };
 }
 
-function regionMatches(place, regionText) {
+function regionMatches(place, regionText) { // Matches cleaned searchbar input to the API's location data //
     const rawRegion = cleanText(regionText);
     const fullStateName = stateAbbreviations[rawRegion] || '';
     const admin1 = cleanText(place.admin1 || '');
@@ -126,7 +126,7 @@ function regionMatches(place, regionText) {
     return false;
 }
 
-function findBestPlace(results, searchText) {
+function findBestPlace(results, searchText) { // Goes through location results from API after searchbar input is given and uses a points system to choose which location is most accurate to the search //
     const searchParts = splitLocationSearch(searchText);
     const citySearch = cleanText(searchParts.cityName);
     const regionSearch = searchParts.regionName;

@@ -1,14 +1,14 @@
-.forecast-title {
+.forecast-title { /* Visuals of '5-Day Forecast' text */
     margin-left: 10px;
     color: #0508d1;
     text-shadow: 0px 3px 2px #000000;
 }
 
-.forecast-hidden {
+.forecast-hidden { /* Shows nothing, used to hide forecast container  and 5-Day Forecast headerwhen searchbar has no input or site is reset */
     display: none;
 }
 
-.forecast-container {
+.forecast-container { /* Visuals and formatting of forecast container box holding forecast cards */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: left;
     margin-left: 10px;
@@ -20,27 +20,27 @@
     min-height: 120px;
 }
 
-.forecast-header {
-    margin-bottom: 16px;
+.forecast-header { /* Formatting of forecast container header, where location results are shown */
+    margin-bottom: 10px;
 }
 
-.forecast-header h2 {
+.forecast-header h2 { /* Formatting and text color of main, larger location result header */
     margin: 0 0 4px;
     color: #000000;
 }
 
-.forecast-header p {
+.forecast-header p { /* Formatting and text color of secondary, smaller location result header */
     margin: 0;
     color: #1f1d1d;
 }
 
-.forecast-grid {
+.forecast-grid { /* Formats forecast cards into a grid inside forecast container to ensure the 5 cards stack vertically */
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;
 }
 
-.forecast-card {
+.forecast-card { /* Visuals and formatting of individual forecast cards inside container, each card represents one day's forecast */ 
     width: 100%;
     box-sizing: border-box;
     border: 2px solid #000000;
@@ -51,80 +51,80 @@
     color: #163243;
 }
 
-.forecast-card-content {
+.forecast-card-content { /* Spacing and layout of content inside forecast card */
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
 }
 
-.forecast-card-text {
+.forecast-card-text { /* Formatting of text inside forecast card to fill available space */
     flex: 1;
 }
 
-.forecast-icon {
+.forecast-icon { /* Formatting and sizing of forecast card image */
     width: 72px;
     height: 72px;
     flex-shrink: 0;
     object-fit: contain;
 }
 
-.forecast-card h3 {
+.forecast-card h3 { /* Formatting and color of main header text showing the date on forecast card */
     margin-top: 0;
     margin-bottom: 10px;
     color: inherit;
 }
 
-.forecast-card p {
+.forecast-card p { /* Formatting of temperature high, low, and rain chance percentage text below date on forecast card */
     margin: 6px 0;
 }
 
-.forecast-summary {
+.forecast-summary {  /* Formatting of text stating the general forecast (sunny, rainy, cloudy, etc.) on forecast cards */
     font-weight: bold;
 }
 
-.forecast-message {
+.forecast-message { /* Formatting and text color of return messages inside forecast container when search input provides no results */
     margin: 0;
     color: #000000;
 }
 
-.forecast-sunny {
+.forecast-sunny { /* Text color and background gradient of forecast card on sunny or clear sky days */
     background: linear-gradient(to right, #ec9a3c, lightblue 100%);
     border: 2px solid rgb(68, 126, 161);
     color: #000000;
 }
 
-.forecast-cloudy {
+.forecast-cloudy { /* Text color and solid background of forecast card on cloudy or overcast days */
     background: rgb(185, 185, 185);
     border: 2px solid rgb(105, 100, 100);
     color: #000000;
 }
 
-.forecast-foggy {
+.forecast-foggy { /* Text color and solid background of forecast card on foggy days */
     background: rgb(185, 185, 185);
     border: 2px solid rgb(105, 100, 100);
     color: #000000;
 }
 
-.forecast-rainy {
+.forecast-rainy { /* Text color and background gradient of forecast card on rainy days */
     background: linear-gradient(to right,#587ea6, rgb(133, 129, 129));
     border-color: #25486d;
     color: #000000;
 }
 
-.forecast-snowy {
+.forecast-snowy { /* Text color and background gradient of forecast card on snowy days */
     background: linear-gradient(to right, #9bcbe0, white);
     border-color: #4a93b3;
     color: #000000;
 }
 
-.forecast-stormy {
+.forecast-stormy { /* Text color and background gradient of forecast card on thunderstorm days */
     background: linear-gradient(to right, #cfcd50, rgb(133, 129, 129));
     border-color: #9c9a00;
     color: #000000;
 }
 
-.forecast-default {
+.forecast-default { /* Text color, unique red border, and solid background of forecast card when precipitation information is unavailable */
     background: white;
     border-color: #ec3843;
     color: #000000;
