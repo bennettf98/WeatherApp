@@ -19,7 +19,7 @@ Users of ForecastFive are presented with the ability to search for any city, sta
 
 ## How to Run
 
-This app is intended to be easy-to-use as a simply website, with no installation of any programs or the application itself necessary. The website can be found at: https://bennettf98.github.io/WeatherApp/
+This app is intended to be easy-to-use simply as a website, with no installation of any programs or the application itself necessary. The website can be found at: https://bennettf98.github.io/WeatherApp/
 
 ## Author
 
