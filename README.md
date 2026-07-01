@@ -23,7 +23,7 @@ This app is intended to be easy-to-use simply as a website, with no installation
 
 ## Author
 
-Created by Bennett F.
+Created by Bennett Franzen
 
 More of my work here: https://github.com/bennettf98
 
