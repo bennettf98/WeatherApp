@@ -2,7 +2,7 @@
 
 ## About this Project
 
-ForecastFive is a weather app built with HTML, CSS, and JavaScript allowing users to search for a specific location to view its 5-day weather forecast based on data provided by the Open-Meteo weather API. This project was created primarily to showcase my personal understanding of said languages. It uses Open-Meteo API for its forecast information.
+ForecastFive is a weather app built with HTML, CSS, and JavaScript allowing users to search for a specific location to view its 5-day weather forecast based on data provided by the Open-Meteo weather API and its forecast information. This project was created primarily to showcase my personal understanding of said languages.
 
 ## How it Works
 
